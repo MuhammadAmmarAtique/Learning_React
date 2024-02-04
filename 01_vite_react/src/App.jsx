@@ -1,7 +1,10 @@
+import Greeting from './greeting.jsx'
+
+
 function App() {
 
   return (
-    <h1>Hello from React project from "Vite"</h1>
+    <Greeting />
   )
 }
 
