@@ -5,9 +5,9 @@ function App() {
   let [counter, setCounter] = useState(0);
 
   let addValue = () => {
-    if (counter === 20) {
+    if (counter === 10) {
       document.querySelector("#display").innerHTML =
-        "Cant increase value more then 20";
+        "Cant increase value more then 10";
     } 
     else {
       setCounter(counter = counter+1);
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <h1>Using React Hooks in Simple Counter App </h1>
+      <h1>Using React Hook (useState) in Simple Counter App </h1>
       <h3>Counter value: {counter}</h3>
 
       <button onClick={addValue}>Add value</button>
