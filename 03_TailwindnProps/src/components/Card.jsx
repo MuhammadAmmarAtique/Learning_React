@@ -1,7 +1,7 @@
 import React from "react";
 
-function Card({username ="Laptop",laptopInfo="best laptop ever", btnText="click here"}) {
-    // console.log(username);
+function Card({laptopName ="Laptop",laptopInfo="best laptop ever", btnText="click here"}) {
+    // console.log(laptopName);
     return (
         <div className="w-[300px] rounded-md text-white border">
         <img
@@ -10,7 +10,7 @@ function Card({username ="Laptop",laptopInfo="best laptop ever", btnText="click 
           className="h-[200px] w-full rounded-md object-cover"
         />
         <div className="p-4">
-          <h1 className="text-lg font-semibold">{username}</h1>
+          <h1 className="text-lg font-semibold">{laptopName}</h1>
           <p className="mt-3 text-sm text-gray-600">
             {laptopInfo}
           </p>

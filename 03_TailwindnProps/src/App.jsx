@@ -16,9 +16,9 @@ function App() {
     <>
     
       <h1 className="bg-green-500 mb-4 ">Hello world!</h1>
-      <Card username="Dell" laptopInfo={dell_info} btnText="Click me" />
-      <Card username="Lenovo"  laptopInfo={lenovo_info} btnText="Check me"/>
-      <Card username="Apple" laptopInfo={apple_info}  btnText="Read me"/>
+      <Card laptopName="Dell" laptopInfo={dell_info} btnText="Click me" />
+      <Card laptopName="Lenovo"  laptopInfo={lenovo_info} btnText="Check me"/>
+      <Card laptopName="Apple" laptopInfo={apple_info}  btnText="Read me"/>
 
     </>
   )
