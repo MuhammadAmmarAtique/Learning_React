@@ -34,8 +34,9 @@ const AnotherReactElement = React.createElement(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-   <>
-   AnotherReactElement
-   <App/>
-   </>
+
+    // <PtiSlogan />
+    // exampleElement
+   //    AnotherReactElement
+ 
     )
