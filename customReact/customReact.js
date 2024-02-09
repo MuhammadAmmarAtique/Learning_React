@@ -1,5 +1,6 @@
 //When we create a react component and render it (behind the scene looks like this)
 
+// .render() behind the scene work like this
 function renderElement (elem,container)
 {
     let newElement =document.createElement(elem.type);
@@ -17,6 +18,7 @@ function renderElement (elem,container)
 
 const mainContainer= document.querySelector("#root");
 
+// When we define hmtl element in react functional component behind the scene work like this
 const reactElement = 
 {
     type: "a",
