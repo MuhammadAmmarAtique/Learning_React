@@ -1,3 +1,5 @@
+import React from "react";
+
 function Greeting() {
 
  let name = "Ammar"; 
@@ -7,4 +9,6 @@ function Greeting() {
   }
  
   export default Greeting
+
+
   
