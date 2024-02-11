@@ -7,8 +7,8 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <h1 className="text-3xl font-bold underline bg-zinc-600">
-    Hello world!
+    <h1 className="text-4xl font-bold ">
+    Password Generator
   </h1>
   )
 }
