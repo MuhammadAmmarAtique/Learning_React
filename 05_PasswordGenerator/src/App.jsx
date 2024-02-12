@@ -6,9 +6,9 @@ function App() {
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
 
-  const PasswordGenerator = useEffect(()=>{
+  const PasswordGenerator = useCallback(()=>{
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -36,9 +36,9 @@ function App() {
   const passwordRef = useRef(null);
 
   const handleCopyButtonClick = useCallback(() => {
-    //copy karty waqt jo text highligh horaha hai wo isis wajah saay ho raha hai
+    //copy karty waqt jo text highligh horaha hai wo isi wajah saay ho raha hai
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0,500); //jitny hisaay ko highlight karna hai
+    passwordRef.current?.setSelectionRange(0,500); //kitny hisaay ko highlight karna hai wo range bta sakty hain
     // Copy the password value to clipboard
     window.navigator.clipboard.writeText(password);
   },[password]);
