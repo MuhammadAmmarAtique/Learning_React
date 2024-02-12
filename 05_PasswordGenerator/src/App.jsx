@@ -62,7 +62,7 @@ function App() {
         className=' text-black pl-[10px] py-2 rounded-sm w-[80%]'
         value={password}
         />
-        <button onClick={handleCopyButtonClick} className='bg-cyan  py-2 rounded w-16 bg-[#1b4add]'>Copy</button>
+        <button onClick={handleCopyButtonClick}  className='  bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition transform duration-300 focus:outline-none active:scale-90 ;'>Copy</button>
   </div>
 
  {/*  Flex item-3 + A Separate Flexbox (remaining) */}
@@ -105,9 +105,6 @@ function App() {
       <label htmlFor="charInput">Characters</label>
      </div>
   </div>
-
-
-
   </div>
   
    </>
