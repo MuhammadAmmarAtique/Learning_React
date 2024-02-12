@@ -46,7 +46,7 @@ function App() {
   return (
    <>
 
-  <div className='mt-8 m-auto max-w-[800px] bg-[#23272f] rounded-md flex flex-col'>
+  <div className='mt-8 m-auto max-w-[800px] bg-[#23272f] rounded-md flex flex-col container'>
 
   {/* Flex item-1 */}
   <h1 className="text-3xl mt-2 font-bold text-center">
@@ -54,19 +54,19 @@ function App() {
   </h1>
 
  {/*  Flex item-2 (Password and copy button div) */}
-  <div className='text-center mt-2  '>
+  <div className='text-center mt-2 w-[100%] '>
         <input 
         ref={passwordRef}
         type="text"
         placeholder='Password'
-        className=' text-black pl-[10px] py-2 rounded-sm w-[600px]'
+        className=' text-black pl-[10px] py-2 rounded-sm w-[80%]'
         value={password}
         />
         <button onClick={handleCopyButtonClick} className='bg-cyan  py-2 rounded w-16 bg-[#1b4add]'>Copy</button>
   </div>
 
  {/*  Flex item-3 + A Separate Flexbox (remaining) */}
-  <div className='mt-2 mb-4 flex justify-center gap-8'>
+  <div className='mt-2 mb-4 flex flex-col sm:flex-row justify-center items-center  sm:gap-8 gap-2'>
     {/* a)range */}
     <div>
     <input type="range" 
