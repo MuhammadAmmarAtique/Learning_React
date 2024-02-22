@@ -86,7 +86,7 @@ function Contact() {
                             </div>
                         </div>
 
-                        <form className="p-6 flex flex-col justify-center">
+                        <form className="p-6 flex flex-col justify-center" onSubmit={(e)=>{e.preventDefault()}}>
                             <div className="flex flex-col">
                                 <label for="name" className="hidden">
                                     Full Name
