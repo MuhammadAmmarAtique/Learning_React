@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import { Home, About, Contact } from './components/index.js';
+import { Home, About, Contact, User, Github } from './components/index.js';
 
 // Way 1 of creating router
 // const router = createBrowserRouter([
@@ -30,14 +30,14 @@ import { Home, About, Contact } from './components/index.js';
 // ]);
 
 // Way 2 of creating router
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
         <Route path='' element={<Home/>}/>
         <Route path='About-Us' element={<About/>}/>
         <Route path='Contact-Us' element={<Contact/>}/>
-
+        <Route path='User/:UserData' element={<User/>}/>                   {/* Imp */}
+        <Route path='Github' element={<Github/>}/>                  
     </Route>
   )
 )
