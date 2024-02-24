@@ -6,7 +6,7 @@ function User() {
   const {UserData} = useParams();
 
   return (
-        <div className="bg-gray-500 text-white text-3xl"> 
+        <div className="bg-gray-500 text-white text-3xl text-center"> 
           User: {UserData}
           </div>
   )
