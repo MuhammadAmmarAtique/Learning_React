@@ -35,7 +35,7 @@ const router = createBrowserRouter(
         <Route path='' element={<Home/>}/>
         <Route path='About-Us' element={<About/>}/>
         <Route path='Contact-Us' element={<Contact/>}/>
-        <Route path='User/:UserData' element={<User/>}/>   {/* Imp(getting gynamic values from url) */}
+        <Route path='User/:UserData' element={<User/>}/>                   {/* Imp(getting dynamic values from url) */}
         <Route 
         loader={GithubInfo}
         path='Github' 
