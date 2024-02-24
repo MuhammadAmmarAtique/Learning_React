@@ -32,7 +32,7 @@ import { Home, About, Contact, User, Github, GithubInfo  } from './components/in
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
-        <Route path='' element={<Home/>}/>
+        <Route path='' element={<Home/>}/>   {/*The "path" we are giving here we will write same in Navlink "to" */}
         <Route path='About-Us' element={<About/>}/>
         <Route path='Contact-Us' element={<Contact/>}/>
         <Route path='User' element={<User/>}/>       
