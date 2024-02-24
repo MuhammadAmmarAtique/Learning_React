@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import { Home, About, Contact, User, Github } from './components/index.js';
+import { Home, About, Contact, User, Github, GithubInfo  } from './components/index.js';
 
 // Way 1 of creating router
 // const router = createBrowserRouter([
@@ -36,8 +35,11 @@ const router = createBrowserRouter(
         <Route path='' element={<Home/>}/>
         <Route path='About-Us' element={<About/>}/>
         <Route path='Contact-Us' element={<Contact/>}/>
-        <Route path='User/:UserData' element={<User/>}/>                   {/* Imp */}
-        <Route path='Github' element={<Github/>}/>                  
+        <Route path='User/:UserData' element={<User/>}/>   {/* Imp(getting gynamic values from url) */}
+        <Route 
+        loader={GithubInfo}
+        path='Github' 
+        element={<Github/>}/>                  
     </Route>
   )
 )
