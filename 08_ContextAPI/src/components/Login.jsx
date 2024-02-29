@@ -32,7 +32,7 @@ function Login() {
             type="text" 
             placeholder="password" />
 
-            <button onSubmit={handleSubmit} type="button"> Submit </button>
+            <button onClick={handleSubmit} type="button"> Submit </button>
         </div>
         
      );
