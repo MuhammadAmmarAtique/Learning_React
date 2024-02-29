@@ -5,7 +5,7 @@ function Login() {
     let [username,setUsername] = useState('');
     let [password,setPassword] = useState('');
     
-    //to fetch data(setUser) from "usercontext" we use useContext hook
+    //useContext hook access the setUser function from the UserContext
     const {setUser} = useContext(UserContext);
 
    const handleSubmit = (e)=>

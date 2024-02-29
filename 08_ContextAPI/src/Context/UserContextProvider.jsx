@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserContext from "./UserContext";
 
+// {children} matlb kaay jo bhi prop aa raha hai usaay as it is agaay use karoo
 const UserContextProvider = ({children})=>{
 
     const [user,setUser] =useState(null);
