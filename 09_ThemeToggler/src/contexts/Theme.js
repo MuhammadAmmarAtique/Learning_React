@@ -3,7 +3,7 @@ import { createContext,useContext } from "react";
 //jab context pahli baar bnaay ga tooh us ka andar values by default present hongee as a "object".
 export const ThemeContext = createContext({
      themeMode: "light",
-     darkMode: () => {},
+     darkMode: () => {},    //here we just define functions and define functionilty mostly in App.jsx
      lightMode: () => {},
     });
 

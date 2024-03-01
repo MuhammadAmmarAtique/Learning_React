@@ -8,8 +8,8 @@ function App() {
   const [themeMode, setThemeMode] = useState("light")
 
   const darkMode = () => {
-    setThemeMode("dark")   //This darkmode and lightmode functionality will automatically add in ThemeContext
-  }
+    setThemeMode("dark")   //This darkmode and lightmode functionality will automatically add in ThemeContext b/c
+  }                        //of ThemeProvider we defined below with its values.
 
   const lightMode = () => {
     setThemeMode("light")
