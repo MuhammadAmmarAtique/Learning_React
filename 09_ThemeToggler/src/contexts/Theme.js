@@ -10,7 +10,7 @@ export const ThemeContext = createContext({
 //same hee file mai context aur uska provider bna lia ha
 export const ThemeProvider = ThemeContext.Provider;    
 
-//exporting cutom hook (useTheme) so we can use variables defined in ThemeContext anywhere
+//exporting cutom hook (useTheme) so we can use variables/functions defined in ThemeContext anywhere
 export default function useTheme() {
     return useContext(ThemeContext)
 }
