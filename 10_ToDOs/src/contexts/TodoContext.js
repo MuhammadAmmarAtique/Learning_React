@@ -4,15 +4,15 @@ export const ToDoContext = createContext({
     todos:[ //array of objects (every todo is an object)
         {
             id:1,
-            todos:"todos msg",
-            checked:false
+            todoText:"todos msg",
+            completed:false
         }
     ],
     
     addTodo: (todo)=>{},
-    updatedTodo: (todo,id)=>{},
+    updateTodo: (todo,id)=>{},
     deleteTodo: (id)=>{},
-    ToggleComplete: (id)=>{},
+    toggleComplete: (id)=>{},
 
 });
 
