@@ -4,6 +4,8 @@ import ThemeBtn from './components/ThemeBtn'
 import Card from './components/Card'
 import { ThemeProvider } from './contexts/Theme'
 
+//Way#2 of using Context API ( Recommended! as its syntax is easy)
+
 function App() {
   const [themeMode, setThemeMode] = useState("light")
 
