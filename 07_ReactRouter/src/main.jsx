@@ -28,7 +28,7 @@ import { Home, About, Contact, User, Github, GithubInfo  } from './components/in
 //   },
 // ]);
 
-// Way 2 of creating router
+// Way 2 of creating router (Modern and Easy syntax, Recommended!)
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>}>
