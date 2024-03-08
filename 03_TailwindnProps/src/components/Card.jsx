@@ -1,5 +1,8 @@
 import React from "react";
 
+// function Card(prop) {
+    // console.log(prop);
+
 function Card({laptopName ="Laptop",laptopInfo="best laptop ever", btnText="click here"}) {
     // console.log(laptopName);
     return (
