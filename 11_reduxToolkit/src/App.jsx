@@ -1,11 +1,19 @@
+import { Provider } from 'react-redux'
 import './App.css'
+import AddTodo from "./components/AddTodo"
+import Todos from './components/Todos'
+import {store} from "./store/store"
 
 function App() {
 
+
+
   return (
-    <>
-    <h1>Learning about reduxtoolkit</h1>
-    </>
+    <Provider store={store}>
+       <AddTodo/>
+       <Todos/>
+        
+    </Provider>
   )
 }
 
