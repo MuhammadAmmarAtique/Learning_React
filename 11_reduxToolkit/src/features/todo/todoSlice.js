@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
-  todos: [{ id: 1, text: "Hello world" }],
+  todos: [{ id: 1, text: "Hello world" }], //by default this todo will appear in our application
 };
 
  const todoSlice = createSlice({
@@ -14,13 +14,16 @@ const initialState = {
       const todo = {
         id: nanoid(),
         text: action.payload, //jab bhi addtodo() call hoga, tooh jo bhi values as an argument aengee wo 
-      };                     //"action.payload" mai store honee hongee.
-      state.todos.push(todo);
-    },
+      };                     //"action.payload" mai store honee hongee. (text aayga yahan)
 
+      state.todos.push(todo); // **IMP NOTE** (contextApi mai haam pahlaay pichil tamam values ko access kartaay hain 
+    },                       //phir unhain spread kartaay hain aur new value add kartaay hain, jabkaay yahan par asa
+                             //khud ba khud behind the scenen sara kaam ho raha hai 
     //reducer 2
     removeTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+                       //jab bhi removeTodo() call hoga, tooh jo bhi values as an argument aengee wo 
+                      //"action.payload" mai store honee hongee. (id aay gee yahan)
     },
   },
 });
