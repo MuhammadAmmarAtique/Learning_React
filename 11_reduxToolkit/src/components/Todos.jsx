@@ -26,7 +26,7 @@ function Todos() {
       <ul className="list-none">
         {todos.map((todo) => (
           <li
-            className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
+            className="mt-4 flex  justify-between items-center bg-zinc-800 px-4 py-2 rounded"
             key={todo.id}
           >
             {/* Flex item 1 */}
@@ -34,12 +34,12 @@ function Todos() {
 
             {/* Flex item 2 */}
 
-              <div className="flex-1 flex justify-end space-x-4">
+              <div className="flex-1 flex flex-wrap justify-end space-x-4">
               <input
                 type="text"
                 value={editedText[todo.id] || ""}
                 onChange={(e) => handleChange(todo.id, e.target.value)}
-                className="border-b border-gray-400 focus:outline-none lg:p-2"
+                className="border-b border-gray-400 focus:outline-none p-1"
                 />
                 {/* Edit button */}
               <button

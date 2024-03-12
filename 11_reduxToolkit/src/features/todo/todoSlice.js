@@ -20,11 +20,12 @@ const initialState = {
     },                       //phir unhain spread kartaay hain aur new value add kartaay hain, jabkaay yahan par asa
                              //khud ba khud behind the scenen sara kaam ho raha hai 
     //reducer 2
-    removeTodo: (state, action) => {
-      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    removeTodo: (state, action) => { //"filter()" jin ki values true hotee hain sirf un ko return karta hai, yahan par
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload); }, //tamam todos sirf aik ko chor kar.
+
                        //jab bhi removeTodo() call hoga, tooh jo bhi values as an argument aengee wo 
                       //"action.payload" mai store honee hongee. (id aay gee yahan)
-    },
+   
 
     //reducer 3
     updateTodo: (state, action) => {
@@ -33,6 +34,7 @@ const initialState = {
       if (todoToUpdate) {
         todoToUpdate.text = newText;
       }
+      // yahan par aik todo update hojaiy ga, saraay todos mai saay
     },
   },
 });
