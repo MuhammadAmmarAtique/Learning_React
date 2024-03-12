@@ -11,6 +11,7 @@ function Todos() {
 
    // Function to handle editing of a todo item
   const handleEdit = (id) => {
+    // console.log(editedText, editedText[id]); ([id] is dynamically assigned property to (object) i.e editedText state)
     dispatch(updateTodo({ id, newText: editedText[id] }));
     setEditedText({ ...editedText, [id]: "" }); // Clear the edited text for the specific todo item
   };
