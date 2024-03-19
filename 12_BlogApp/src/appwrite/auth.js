@@ -24,12 +24,7 @@ export class AuthService {
   //1) Sign-up
   async createAccount({ email, password, name }) {
     try {
-      const userAccount = await this.account.create(
-        ID.unique(),
-        email,
-        password,
-        name
-      );
+      const userAccount = await this.account.create( ID.unique() ,email ,password ,name );
           if (userAccount) {
             //if account is created , i want user to login at that point also
             return this.login( { email, password })
@@ -38,7 +33,7 @@ export class AuthService {
           }
     }
      catch (error) {
-      throw error;
+      throw error; //stop code exection in case of error and throw error to console
     }
   }
 
@@ -51,6 +46,31 @@ export class AuthService {
     catch (error) {
       throw error;
     }
+  }
+
+   //3) Logout
+   async logout() {
+    try 
+    {
+      return  await this.account.deleteSessions();  //deleteSession and deleteSessions are two different functions.
+    }                        //deleteSessions will logout user from all the devices
+    catch (error) {
+      console.log("Appwrite Authentication Service error :: Logout error :: " , error) //gracefully handling error
+    }
+  }
+
+   //4) getCurrentUser    (if user lands directly on home page, we will check if user is login or not ?)
+   async getCurrentUser() {
+    try 
+    {
+      return  await this.account.get();
+    } 
+    catch (error) {
+      console.log("Appwrite Authentication Service error :: getCurrentUser error :: " , error)
+    }
+
+    return null;  //If an error occurs during the execution of await this.account.get(), the code catches the error
+    //  in the catch block and logs it using console.log(). After handling the error, the function returns null
   }
 }
 
