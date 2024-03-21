@@ -17,9 +17,9 @@ export class Service {
     this.storage = new Storage(client);
   }
 
-  //1) create Post
-
-  async createPost({ title, slug, content, featuredImage, status, userId }) {
+   // (DATABASES)
+   //1) Create Post                            
+    async createPost({ title, slug, content, featuredImage, status, userId }) { //here unique id for a post is slug
     try {
       return await this.databases.createDocument(
         config.appwriteDatabaseId,
@@ -38,10 +38,10 @@ export class Service {
     {
         console.log( "Appwrite Configuration Service error :: createPost error :: ", error );
     }
-  }
-  //2) update Post
-        //by using slug we will uniquely identify our post so we will keep it outside object for our ease.
-  async updatePost( slug, { title, content, featuredImage, status }) { 
+   }
+    //2) Update Post
+    // (by using slug we will uniquely identify our post so we will keep it outside object for our ease.)
+    async updatePost( slug, { title, content, featuredImage, status }) { 
     try {
       return await this.databases.updateDocument(
         config.appwriteDatabaseId,
@@ -59,11 +59,10 @@ export class Service {
     {
         console.log( "Appwrite Configuration Service error :: updatePost error :: ", error );
     }
-  }
+    }
 
-  //3) Delete Post
-        
-    async deletePost( slug) { 
+    //3) Delete Post      
+    async deletePost(slug) { 
         try {
             await this.databases.deleteDocument(  //we dont need to return any value we just have to delete post
             config.appwriteDatabaseId,
@@ -77,7 +76,78 @@ export class Service {
             console.log( "Appwrite Configuration Service error :: deletePost error :: ", error );
         }
         return false
+    }
+   
+    //4) Get Post   (to take one post)
+    async getPost(slug) { 
+        try {
+           return await this.databases.getDocument( 
+            config.appwriteDatabaseId,
+            config.appwriteCollectionId,
+            slug
+            );
+        }  
+        catch (error) 
+        {
+            console.log( "Appwrite Configuration Service error :: getPost error :: ", error );
         }
+    }     
+
+    //5) We need all that post in which status is "active", for that we will write custom query along with method
+    // databases.listDocuments()
+
+    async getAllPosts() { 
+        try {
+           return await this.listDocuments(  
+            config.appwriteDatabaseId,
+            config.appwriteCollectionId,
+            [
+                Query.equal("status", ["active"])  // This custom query will filter the result.
+            ]                                      // Inside this array we can give multiple queries.
+            );
+        }  
+        catch (error) 
+        {
+            console.log( "Appwrite Configuration Service error :: getAllPosts error :: ", error );
+        }
+    } 
+
+   // (STORAGE)
+   // 1) Upload file method/ Service(confirm if its create file or upload file as sir named it as upload, its confusing)
+   async uploadFile(file) { 
+    try {
+       return await this.storage.createFile(
+        config.appwriteBucketId,
+        ID.unique(),
+        file
+    );
+    }  
+    catch (error) 
+    {
+        console.log( "Appwrite Configuration Service error :: uploadFile error :: ", error );
+    }
+} 
+     
+  // 2) Download file method/ Service
+  async deleteFile(fileId) { 
+    try {
+        await this.storage.deleteFile(
+        config.appwriteBucketId, fileId);
+        return true
+    }  
+    catch (error) 
+    {
+        console.log( "Appwrite Configuration Service error :: deleteFile error :: ", error );
+        return false
+
+    }
+} 
+   
+   //3) File preview  (We will not write it in async await as its response is very fast)
+   getFilePreview(fileId) {
+    this.storage.getFilePreview(config.appwriteBucketId, fileId);      
+} 
+
 }
 
 const service = new Service();
