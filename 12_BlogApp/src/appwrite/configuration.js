@@ -128,7 +128,7 @@ export class Service {
     }
 } 
      
-  // 2) Download file method/ Service
+  // 2) Delete file method/ Service
   async deleteFile(fileId) { 
     try {
         await this.storage.deleteFile(
