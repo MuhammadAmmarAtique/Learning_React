@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import authService from "./appwrite/authentication";
 import { login, logout } from "./store/authSlice";
 import { Header, Footer } from "./components/index";
+import { Outlet  } from "react-router-dom";
 
 function App() {
   // Whenever we are fetching data from anywhere like databases,appwrite it is good to make a loading state, on basis of
@@ -36,6 +37,11 @@ function App() {
 
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
+        <Header />
+          <main>
+         TODO    {/* <Outlet/> */}
+          </main>
+        <Footer />
       </div>
     </div>
 

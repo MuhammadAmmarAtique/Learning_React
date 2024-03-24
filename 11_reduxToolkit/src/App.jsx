@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux'
+import {store} from "./store/store"
 import './App.css'
 import AddTodo from "./components/AddTodo"
 import Todos from './components/Todos'
-import {store} from "./store/store"
 
 function App() {
 
