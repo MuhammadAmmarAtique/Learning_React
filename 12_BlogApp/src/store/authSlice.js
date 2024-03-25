@@ -1,3 +1,5 @@
+// We can place authSlice file inside store also instead of making another Feature folder ( we can follow this directory structure also for our ease.)
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
