@@ -55,7 +55,7 @@ function Login() {
             Sign Up
           </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && (<p className="text-red-600 mt-8 text-center">{error}</p>)}
         {/* 1) HANDLE SUBMIT */}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
@@ -63,7 +63,7 @@ function Login() {
               label="Email: "
               placeholder="Enter your email"
               type="email"
-        // {/*  2) REGISTER */}
+        // {/*  2) REGISTER no.1 */}
               {...register("email", {
                 required: true,
                 validate: {
@@ -77,6 +77,7 @@ function Login() {
               label="Password: "
               type="password"
               placeholder="Enter your password"
+        // {/*  REGISTER no.2 */}
               {...register("password", {
                 required: true,
               })}
