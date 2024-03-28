@@ -1,4 +1,4 @@
-// Its a Login Component not a "Login Page!"
+// Its a Login Component not a "Login Page!", Also we are using React-hook-Form in it
 
 import React from "react";
 import { useState } from "react";
