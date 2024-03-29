@@ -9,6 +9,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import PostCard from "./PostCard";
 import Select from "./Select"
+import Protected from "./AuthLayout" //AuthLayout.jsx
 
 export {
   Header,
@@ -21,5 +22,6 @@ export {
   Login,
   Signup,
   PostCard,
-  Select
+  Select,
+  Protected
 };
