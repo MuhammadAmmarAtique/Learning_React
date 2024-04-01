@@ -152,4 +152,4 @@ export class Service {
 
 const service = new Service();
 
-export default service;
+export default service;   // it will be better if we gave it a name of appwrite service TODO
