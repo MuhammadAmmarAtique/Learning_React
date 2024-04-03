@@ -2,8 +2,8 @@
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form"; // it performs same function as forwardRef () hook
 
-// Ya "control"  hee responsible ha, is component ki sari states ko dosray component mai laay kar janaay ka liay (control will come from parent element who will call it similar as "ref")
-function RTE({ name, control, label, defaultValue = "" }) {
+// Ya "control"  hee responsible ha, is component ki sari states ko dosray component mai laay kar janaay ka liay (control will come from parent element who will call it similar as "ref") + "control" comes from useform ()
+function RTE({ name, control, label, defaultValue = "" }) { 
   return (
     <div className="w-full">
       {label && <label className="inline-block mb-1 pl-1">{label}</label>}
