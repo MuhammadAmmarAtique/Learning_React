@@ -98,7 +98,7 @@ export class Service {
 
     async getAllPosts() { 
         try {
-           return await this.listDocuments(  
+           return await this.listDocuments(   // note: query result comes in the form of array
             config.appwriteDatabaseId,
             config.appwriteCollectionId,
             [
