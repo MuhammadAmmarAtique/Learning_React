@@ -9,7 +9,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import PostCard from "./PostCard";
 import Select from "./Select"
-import Protected from "./AuthLayout" //AuthLayout.jsx
+import AuthLayout from "./AuthLayout" //Protected () is renamed into AuthLayout as it is exported as default
 import RTE from "./RTE";
 import PostForm from "./Post-Form/PostForm"
 
@@ -25,7 +25,7 @@ export {
   Signup,
   PostCard,
   Select,
-  Protected,
+  AuthLayout,
   RTE,
   PostForm
 };
