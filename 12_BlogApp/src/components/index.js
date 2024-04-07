@@ -1,5 +1,5 @@
 import Header from "./Header/Header";
-import LogoutBtn from "./Header/LogoutBtn";  //logout button inside header component
+import LogoutBtn from "./Header/LogoutBtn"; //logout button inside header component
 import Footer from "./Footer/Footer";
 import Container from "./Container/Container";
 import Logo from "./Logo";
@@ -8,10 +8,10 @@ import Input from "./Input";
 import Login from "./Login";
 import Signup from "./Signup";
 import PostCard from "./PostCard";
-import Select from "./Select"
-import AuthLayout from "./AuthLayout" //Protected () is renamed into AuthLayout as it is exported as default
+import Select from "./Select";
+import AuthLayout from "./AuthLayout.jsx"; //Protected
 import RTE from "./RTE";
-import PostForm from "./Post-Form/PostForm"
+import PostForm from "./Post-Form/PostForm";
 
 export {
   Header,
@@ -27,5 +27,5 @@ export {
   Select,
   AuthLayout,
   RTE,
-  PostForm
+  PostForm,
 };
