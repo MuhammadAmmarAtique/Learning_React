@@ -33,7 +33,8 @@ export class AuthService {
           }
     }
      catch (error) {
-      throw error; //stop code exection in case of error and throw error to console
+      console.log("Appwrite Authentication Service error :: createAccount error :: " , error)
+
     }
   }
 
@@ -44,7 +45,8 @@ export class AuthService {
       return  await this.account.createEmailSession(email, password);
     } 
     catch (error) {
-      throw error;
+      console.log("Appwrite Authentication Service error :: login error :: " , error)
+
     }
   }
 
