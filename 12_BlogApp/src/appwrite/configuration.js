@@ -13,8 +13,8 @@ export class Service {
     this.client.setEndpoint(config.appwriteUrl);
     this.client.setProject(config.appwriteProjectId);
 
-    this.databases = new Databases(client);
-    this.storage = new Storage(client);
+    this.databases = new Databases(this.client);
+    this.storage = new Storage(this.client);
   }
 
    // (DATABASES)
@@ -151,5 +151,4 @@ export class Service {
 }
 
 const service = new Service();
-
 export default service;   // it will be better if we gave it a name of appwrite service TODO
