@@ -5,7 +5,6 @@ import './index.css'
 import { Provider } from 'react-redux'
 import { store } from "./store/store.js"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// check if i have to import component or pages ? 
 import AuthLayout from "./components/AuthLayout.jsx"
 import { Home, Login, Signup, AllPosts, AddPost, EditPost, Post } from './pages/pagesIndex.js'
 
@@ -75,10 +74,10 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+  //  </React.StrictMode>,    //Temporarily commented this for begugging
 
 )
