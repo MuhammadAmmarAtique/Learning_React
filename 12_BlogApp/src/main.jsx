@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from "./store/store.js"
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // check if i have to import component or pages ? 
 import AuthLayout from "./components/AuthLayout.jsx"
 import { Home, Login, Signup, AllPosts, AddPost, EditPost, Post } from './pages/pagesIndex.js'
