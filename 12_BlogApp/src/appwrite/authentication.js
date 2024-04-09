@@ -15,8 +15,9 @@ export class AuthService {
   constructor() {
     //if in some day we decide to use "firebase" instead of "appwrite", we will just change
     // constructor() and we are good to go!
-    this.client.setEndpoint(config.appwriteUrl);
-    this.client.setProject(config.appwriteProjectId);
+    this.client
+      .setEndpoint(config.appwriteUrl)
+      .setProject(config.appwriteProjectId);
 
     this.account = new Account(this.client);
   }
@@ -24,54 +25,63 @@ export class AuthService {
   //1) Sign-up
   async createAccount({ email, password, name }) {
     try {
-      const userAccount = await this.account.create( ID.unique() ,email ,password ,name );
-          if (userAccount) {
-            //if account is created , i want user to login at that point also
-            return this.login( { email, password })
-          } else {
-            return userAccount;
-          }
-    }
-     catch (error) {
-      console.log("Appwrite Authentication Service error :: createAccount error :: " , error)
-
+      const userAccount = await this.account.create(
+        ID.unique(),
+        email,
+        password,
+        name
+      );
+      if (userAccount) {
+        //if account is created , i want user to login at that point also
+        return this.login({ email, password });
+      } else {
+        return userAccount;
+      }
+    } catch (error) {
+      console.log(
+        "Appwrite Authentication Service error :: createAccount error :: ",
+        error
+      );
     }
   }
 
   //2) Login/ Sign-in
-  async login({ email, password}) {
-    try 
-    {
-      return  await this.account.createEmailSession(email, password);
-    } 
-    catch (error) {
-      console.log("Appwrite Authentication Service error :: login error :: " , error)
-
+  async login({ email, password }) {
+    try {
+      return await this.account.createEmailSession(email, password);
+    } catch (error) {
+      console.log(
+        "Appwrite Authentication Service error :: login error :: ",
+        error
+      );
     }
   }
 
-   //3) Logout
-   async logout() {
-    try 
-    {
-      return  await this.account.deleteSessions();  //deleteSession and deleteSessions are two different functions.
-    }                        //deleteSessions will logout user from all the devices
-    catch (error) {
-      console.log("Appwrite Authentication Service error :: Logout error :: " , error) //gracefully handling error
+  //3) Logout
+  async logout() {
+    try {
+      return await this.account.deleteSessions(); //deleteSession and deleteSessions are two different functions.
+    } catch (error) {
+      //deleteSessions will logout user from all the devices
+      console.log(
+        "Appwrite Authentication Service error :: Logout error :: ",
+        error
+      ); //gracefully handling error
     }
   }
 
-   //4) getCurrentUser    (if user lands directly on home page, we will check if user is login or not ?)
-   async getCurrentUser() {
-    try 
-    {
-      return  await this.account.get();
-    } 
-    catch (error) {
-      console.log("Appwrite Authentication Service error :: getCurrentUser error :: " , error)
+  //4) getCurrentUser    (if user lands directly on home page, we will check if user is login or not ?)
+  async getCurrentUser() {
+    try {
+      return await this.account.get();
+    } catch (error) {
+      console.log(
+        "Appwrite Authentication Service error :: getCurrentUser error :: ",
+        error
+      );
     }
 
-    return null;  //If an error occurs during the execution of await this.account.get(), the code catches the error
+    return null; //If an error occurs during the execution of await this.account.get(), the code catches the error
     //  in the catch block and logs it using console.log(). After handling the error, the function returns null
   }
 }
