@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Protected({ children, authentication = true }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
-  const authStatus = useSelector((state) => state.auth.status); // (it will tell if user is logged in or not)
+  const authStatus = useSelector(state => state.status); // (it will tell if user is logged in or not)
 
   useEffect(() => {
     // WAY # 1 (EASY BUT NOT RECOMMENDED)

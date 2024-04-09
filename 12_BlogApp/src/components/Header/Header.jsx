@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const navigate = useNavigate();
-  const authStatus = useSelector((state) => state.status); // state.auth.status (use it if error comes)
+  const authStatus = useSelector((state) => state.status); // use "state.status" instead of "state.auth.status" 
   // It will check if user is logged in or not i.e ( true or false )
 
   // Imp note for "navItems"

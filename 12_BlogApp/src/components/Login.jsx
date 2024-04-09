@@ -1,6 +1,6 @@
 // Its a Login Component not a "Login Page!", Also we are using React-hook-Form in it
 
-import React from "react";
+import React from "react"; 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as StoreLogin } from "../store/authSlice"; // renaming "login" to "AuthLogin" for this file code.
