@@ -33,6 +33,7 @@ function Home() {
         <div className="flex flex-wrap">
           {posts.map((post) => (
             <div key={post.$id} className="p-2 w-1/4">
+              {/* Pass values inside Postcard component after destructuring i.e {...post} as this component is accepting values after destructuring like {$id, title, featuredImage}  */}
               <PostCard {...post} />
             </div>
           ))}
