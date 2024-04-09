@@ -5,6 +5,7 @@ import authSliceReducer from "./authSlice";
 
 export const store = configureStore({
     reducer : authSliceReducer
+    //TODO Make one more slice for post (for that i have to make a new file with an object inside)
 });
 
  
