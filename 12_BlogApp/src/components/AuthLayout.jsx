@@ -9,11 +9,11 @@ export default function Protected({ children, authentication = true }) {
 
   useEffect(() => {
     // WAY # 1 (EASY BUT NOT RECOMMENDED)
-    if (authStatus === true) {
-      navigate("/");
-    } else if (authStatus === false) {
-      navigate("/login");
-    }
+    // if (authStatus === true) {
+    //   navigate("/");
+    // } else if (authStatus === false) {
+    //   navigate("/login");
+    // }
 
     // WAY # 2 (HARD BUT  RECOMMENDED)
     // true && false !==true  (true+true so final result = true)
