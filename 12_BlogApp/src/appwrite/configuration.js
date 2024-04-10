@@ -10,8 +10,9 @@ export class Service {
   storage; //storage or bucket
 
   constructor() {
-    this.client.setEndpoint(config.appwriteUrl);
-    this.client.setProject(config.appwriteProjectId);
+    this.client
+      .setEndpoint(config.appwriteUrl)
+      .setProject(config.appwriteProjectId);
 
     this.databases = new Databases(this.client);
     this.storage = new Storage(this.client);
