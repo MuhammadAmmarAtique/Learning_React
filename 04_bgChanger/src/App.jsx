@@ -9,7 +9,7 @@ function App() {
   
   useEffect(() => {
     document.body.style.backgroundColor = color;
-   });
+   },[color]);
   
   return (
     <>
