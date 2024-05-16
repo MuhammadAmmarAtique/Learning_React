@@ -4,8 +4,8 @@ import { useState,useEffect,useCallback } from 'react'
 function App() {
 
   const [length, setLength] = useState(8);
-  const [numberAllowed, setNumberAllowed] = useState(false);
-  const [charAllowed, setCharAllowed] = useState(false);
+  const [numberAllowed, setNumberAllowed] = useState(false); 
+  const [SpecialcharAllowed, setSpecialCharAllowed] = useState(false);   //special characters
   const [password, setPassword] = useState("");
 
   const PasswordGenerator = useCallback(()=>{
@@ -16,7 +16,7 @@ function App() {
       str+="1234567890"
     }
 
-    if (charAllowed) {
+    if (SpecialcharAllowed) {
       str+="!@#$%^&*(){}[]\|``~"
     }
 
@@ -26,11 +26,11 @@ function App() {
 
     setPassword(pass);
 
-  },[length,numberAllowed,charAllowed])
+  },[length,numberAllowed,SpecialcharAllowed])
 
   useEffect(()=>{
     PasswordGenerator()
-  },[length,numberAllowed,charAllowed])
+  },[length,numberAllowed,SpecialcharAllowed])
 
   //useRef hook
   const passwordRef = useRef(null);
@@ -41,6 +41,13 @@ function App() {
     passwordRef.current?.setSelectionRange(0,500); //kitny hisaay ko highlight karna hai wo range bta sakty hain
     // Copy the password value to clipboard
     window.navigator.clipboard.writeText(password);
+    
+    // Showing message taht text is copied
+    document.querySelector('.msg').textContent = "Password Copied!"
+    setTimeout(() => {
+      document.querySelector('.msg').textContent = ""
+    }, 500); 
+
   },[password]);
 
   return (
@@ -96,16 +103,17 @@ function App() {
      <div>
      <input
           type="checkbox"
-          defaultChecked={charAllowed}
+          defaultChecked={SpecialcharAllowed}
           id="charInput"
           onChange={() => {
-            setCharAllowed((prev) => !prev);
+            setSpecialCharAllowed((prev) => !prev);
           }}
       />
       <label htmlFor="charInput">Characters</label>
      </div>
   </div>
   </div>
+  <p className='msg text-center'></p>
   
    </>
   )
