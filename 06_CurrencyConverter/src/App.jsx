@@ -47,7 +47,7 @@ function App() {
             }}
           >
             <div className="w-full mb-1">
-              {/* "From Inputbox" */}
+              {/* 1) "From Inputbox" */}
 
               <InputBox
                 label="From"
@@ -74,7 +74,7 @@ function App() {
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
-              {/* "To Inputbox" */}
+              {/* 2) "To Inputbox" */}
               <InputBox
                 label="To"
                 text="Your Converted Amount"
