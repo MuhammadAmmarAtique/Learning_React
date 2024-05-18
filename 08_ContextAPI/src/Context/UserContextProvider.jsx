@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserContext from "./UserContext";
 
-// {children} matlb kaay jo bhi prop aa raha hai usaay as it is agaay use karoo
+// UserContextProvider is a functional component that takes children as its prop. children represents the nested components that this provider will wrap , in this app childrens are h1, login and profile
 const UserContextProvider = ({children})=>{
 
     const [user,setUser] =useState(null);
