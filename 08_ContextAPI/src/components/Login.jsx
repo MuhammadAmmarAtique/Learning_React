@@ -13,6 +13,10 @@ function Login() {
     e.preventDefault();
     setUser({username,password})  //1) yahan par haam data send kr rahy hain
     
+
+    // clearing input fields after data submission
+    setUsername("")
+    setPassword("")
    }
 
     return ( 
